@@ -54,7 +54,7 @@ export interface HomePage {
 
 export async function apiFetch<Result>(url: string): Promise<Result | null> {
   try {
-    const res = await fetch(process.env.API_URL! + url, {
+    const res = await fetch('http://localhost:3000/api/' + url, {
       cache: 'no-store',
     });
     const data = await res.json();

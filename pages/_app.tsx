@@ -35,5 +35,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 const SWR_CONFIG: SWRConfiguration = {
   fetcher: (url: string) =>
-    fetch(process.env.NEXT_PUBLIC_API_URL! + url).then((res) => res.json()),
+    fetch(
+      (process.env.VERCEL_URL
+        ? 'http://localhost:3000/api/'
+        : `https://${process.env.VERCEL_URL}/api/`) + url
+    ).then((res) => res.json()),
 };
