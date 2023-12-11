@@ -52,15 +52,14 @@ export interface HomePage {
   language: Language;
 }
 
-export const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/`
-  : 'http://localhost:3000/api/';
-
 export async function apiFetch<Result>(url: string): Promise<Result | null> {
   try {
-    const res = await fetch(BASE_URL + url, {
-      cache: 'no-store',
-    });
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_VERCEL_URL // process.env.API_URL + url
+        ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/`
+        : 'http://localhost:3000/api/' + url,
+      { cache: 'no-store' }
+    );
     const data = await res.json();
     if (res.ok) return data;
     else throw data;
