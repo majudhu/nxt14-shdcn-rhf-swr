@@ -5,6 +5,8 @@ The only difference is instead of a seperate expressjs API and mongodb, this dem
 postgres and nextjs api routes. I wont be using server components and server actions just so this demo is as similar
 to the existing project, same goes for auth token instead of cookies. This would also be my first drizzle learninglog
 
+<https://nxt14-shdcn-rhf-swr.vercel.app/>
+
 ## Simplest Carousel Ever
 
 ## getServerSideProps + promise.all + apiFetch util + swr config + swr immutable
