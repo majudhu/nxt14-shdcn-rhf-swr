@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
     limit: 10,
     totalResults,
     totalPages: Math.ceil(totalResults / 10),
-  } as PaginatedApiResponse<any>);
+  } as PaginatedApiResponse<unknown>);
 }
 
 export async function POST(req: NextRequest) {

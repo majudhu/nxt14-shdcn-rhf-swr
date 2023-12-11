@@ -56,7 +56,7 @@ export default function Login() {
         onSubmit={form.handleSubmit(onSubmit)}
         className='m-auto flex flex-col items-center justify-center gap-4 rounded-20 text-white bg-pumpkin p-8 text-center'
       >
-        <img src='/next.svg' className='h-11 mb-3' />
+        <img src='/next.svg' className='h-11 mb-3' alt='Next.js' />
         <TextField
           required
           disabled={isLoading || isValidating}

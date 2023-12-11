@@ -20,7 +20,7 @@ export default function NavbarEn() {
         href='/en'
         className='flex flex-1 lg:flex-none items-center px-5 py-3 bg-pumpkin rounded-20 relative z-10'
       >
-        <img src='/next.svg' className='h-9 sm:h-11' />
+        <img src='/next.svg' className='h-9 sm:h-11' alt='Next.js' />
       </Link>
 
       <Button asChild>

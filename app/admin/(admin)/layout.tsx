@@ -55,7 +55,7 @@ export default function AdminLayout({
           className='bg-pumpkin p-4 rounded-10'
           onClick={() => setExpanded('')}
         >
-          <img src='/next.svg' className='h-10' />
+          <img src='/next.svg' className='h-10' alt='Next.js' />
         </Link>
 
         <nav className='flex-1 overflow-y-auto'>
@@ -114,7 +114,7 @@ export default function AdminLayout({
     </>
   ) : (
     <div className='flex items-center justify-center w-full flex-1 bg-pumpkin'>
-      <img src='/next.svg' className='h-11' />
+      <img src='/next.svg' className='h-11' alt='Next.js' />
     </div>
   );
 }

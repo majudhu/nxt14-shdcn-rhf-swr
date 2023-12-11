@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     .where(eq(users.email, email))
     .limit(1);
   if (user && (await verify(user.password, password))) {
-    // @ts-expect-error
+    // @ts-expect-error remove password from response
     delete user.password;
     const issuedAt = Math.trunc(Date.now() / 1000);
     return Response.json({

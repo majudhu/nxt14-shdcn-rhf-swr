@@ -110,7 +110,7 @@ export default function RichTextEditor<T extends FieldValues>({
     if (typeof (savedValue?.[0] as CustomElement)?.type != 'string') {
       onChange(INITIAL_VALUE);
       setValue(INITIAL_VALUE);
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps -- onchange is not stable
   }, [savedValue]);
 
   if (typeof (value?.[0] as CustomElement)?.type != 'string') {
