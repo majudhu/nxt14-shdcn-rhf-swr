@@ -1,8 +1,9 @@
 import FooterDv from '@/app/footer-dv';
 import FooterEn from '@/app/footer-en';
+import '@/app/globals.css';
 import NavbarDv from '@/app/navbar-dv';
 import NavbarEn from '@/app/navbar-en';
-import '@/app/globals.css';
+import { BASE_URL } from '@/lib/api-types';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { SWRConfig, type SWRConfiguration } from 'swr';
@@ -34,10 +35,5 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 const SWR_CONFIG: SWRConfiguration = {
-  fetcher: (url: string) =>
-    fetch(
-      (process.env.VERCEL_URL
-        ? 'http://localhost:3000/api/'
-        : `https://${process.env.VERCEL_URL}/api/`) + url
-    ).then((res) => res.json()),
+  fetcher: (url: string) => fetch(BASE_URL + url).then((res) => res.json()),
 };

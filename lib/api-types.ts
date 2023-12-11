@@ -52,9 +52,13 @@ export interface HomePage {
   language: Language;
 }
 
+export const BASE_URL = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}/api/`
+  : 'http://localhost:3000/api/';
+
 export async function apiFetch<Result>(url: string): Promise<Result | null> {
   try {
-    const res = await fetch('http://localhost:3000/api/' + url, {
+    const res = await fetch(BASE_URL + url, {
       cache: 'no-store',
     });
     const data = await res.json();
