@@ -27,6 +27,12 @@ export default function NavbarEn() {
         <Link href='/news'>News</Link>
       </Button>
 
+      <a
+        className='text-sm'
+        href='https://github.com/majudhu/nxt14-shdcn-rhf-swr'
+      >
+        GitHub
+      </a>
       <Button asChild variant='ghost' size='sm'>
         <Link href='/admin'>Admin</Link>
       </Button>
