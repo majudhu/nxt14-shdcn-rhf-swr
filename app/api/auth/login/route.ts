@@ -21,9 +21,13 @@ export async function POST(request: NextRequest) {
       tokens: {
         access: {
           expires: new Date(issuedAt + 5 * 60 * 1000) as unknown as string,
-          token: sign({ sub: '1', iat: issuedAt }, process.env.JWT_SECRET!, {
-            expiresIn: '5m',
-          }),
+          token: sign(
+            { sub: user.id, iat: issuedAt },
+            process.env.JWT_SECRET!,
+            {
+              expiresIn: '5m',
+            }
+          ),
         },
       },
     } as LoginPostResponse);
