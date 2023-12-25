@@ -39,3 +39,5 @@ const SWR_CONFIG: SWRConfiguration = {
       '/api/' + url // process.env.NEXT_PUBLIC_API_URL + url
     ).then((res) => res.json()),
 };
+
+export const runtime = 'experimental-edge';
